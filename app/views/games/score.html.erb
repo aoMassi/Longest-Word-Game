@@ -1,0 +1,11 @@
+<h1>Result</h1>
+<% if @included %>
+  <% if @valid_english_word %>
+    <p><em>Congratulations!</em> <%= @word %> is a valid English word!</p>
+  <% else %>
+    <p>Sorry but <em><%= @word %></em> does not seem to be a valid English word...</p>
+  <% end %>
+  <% else %>
+  <p>Sorry but <em><%= @word %></em> can't be built out of <%= @letters.join(", ") %></p>
+ <% end %> 
+<%= link_to "Play again", new_path %>
